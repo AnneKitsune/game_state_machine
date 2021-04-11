@@ -1,9 +1,13 @@
 [package]
 name = "game_state_machine"
-version = "0.1.0"
-authors = ["jojolepro <jojolepro@jojolepro.com>"]
+version = "1.0.0"
+authors = ["Joël Lupien (Jojolepro) <jojolepro@jojolepro.com>"]
 edition = "2018"
-
-# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+description = "A stack-based state machine with update functions."
+keywords = ["game", "ecs"]
+categories = ["game-engines"]
+license = "Apache-2.0"
+exclude = ["doc"]
+repository = "https://github.com/jojolepro/game_state_machine/"
 
 [dependencies]
