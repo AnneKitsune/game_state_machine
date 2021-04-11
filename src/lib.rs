@@ -49,9 +49,16 @@ pub trait State<S> {
 /// ```
 /// ## Generics
 /// - S: State data, the data that is sent to states for them to do their operations.
-#[derive(Default)]
 pub struct StateMachine<S> {
     state_stack: Vec<Box<dyn State<S>>>,
+}
+
+impl<S> Default for StateMachine<S> {
+    fn default() -> Self {
+        Self {
+            state_stack: Vec::default(),
+        }
+    }
 }
 
 impl<S> StateMachine<S> {
@@ -92,7 +99,7 @@ impl<S> StateMachine<S> {
 
     /// Push a state on the stack and start it.
     /// Pauses any previously active state.
-    fn push(&mut self, mut state: Box<dyn State<S>>, state_data: &mut S) {
+    pub fn push(&mut self, mut state: Box<dyn State<S>>, state_data: &mut S) {
         if let Some(state) = self.state_stack.last_mut() {
             state.on_pause(state_data);
         }
