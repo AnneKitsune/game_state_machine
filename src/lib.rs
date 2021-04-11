@@ -2,6 +2,7 @@
 //! This state machine contains a stack of states and handles transitions between them.
 //! StateTransition happen based on the return value of the currently running state's functions.
 //! Only one state can run at once.
+#![deny(missing_docs)]
 
 /// A transition from one state to the other.
 /// ## Generics
